@@ -5,7 +5,7 @@ function App() {
   const [recommendations, setRecommendations] = useState([])
 
   const fetchRecommendations = async () => {
-    const response = await fetch('http://localhost:8000/recommend', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/recommend`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ student_id: studentId })
